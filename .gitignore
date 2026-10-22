@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds and caches
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# secrets (only the example file is committed)
+.env
+.env.*
+!.env.example
+
+# platform folders
+.vercel/
+supabase/.temp/
+supabase/.branches/
+
+# test output
+playwright-report/
+test-results/
+
+# logs and OS/editor files
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+.idea/
+
+# Office lock files
+~$*

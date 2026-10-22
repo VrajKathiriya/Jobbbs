@@ -27,9 +27,9 @@ The single list of every feature and its status. Work is done through tasks in [
 
 | ID | Feature | PRD | Release | Task | Status | Done on | Notes |
 |---|---|---|---|---|---|---|---|
-| FND-01 | Monorepo scaffold (pnpm: `apps/web`, `packages/core`, `supabase/`) | — | v1 | T01 | todo | | |
-| FND-02 | CI checks (lint, typecheck, test, build) | — | v1 | T01 | todo | | |
-| FND-03 | Vercel deployment (Mumbai `bom1`, production + previews) | — | v1 | T01 | todo | | |
+| FND-01 | Monorepo scaffold (pnpm: `apps/web`, `packages/core`, `supabase/`) | — | v1 | T01 | doing | | |
+| FND-02 | CI checks (lint, typecheck, test, build) | — | v1 | T01 | doing | | |
+| FND-03 | Vercel deployment (Mumbai `bom1`, production + previews) | — | v1 | T01 | doing | | |
 | FND-04 | Supabase dev/prod projects + migration pipeline | — | v1 | T02 | todo | | |
 | FND-05 | Owner-only Google sign-in (sign-ups disabled, protected routes) | — | v1 | T02 | todo | | |
 | FND-06 | Edge Function deploy pipeline + shared core running in Deno | — | v1 | T03 | todo | | |

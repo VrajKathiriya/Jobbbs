@@ -1,0 +1,5 @@
+# Hand-written docs keep their own table formatting
+*.md
+
+pnpm-lock.yaml
+next-env.d.ts

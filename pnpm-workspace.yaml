@@ -1,0 +1,7 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Its native binary arrives via optional dependencies; the postinstall is only a fallback.
+ignoredBuiltDependencies:
+  - unrs-resolver

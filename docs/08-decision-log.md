@@ -96,6 +96,11 @@ None right now. Add new ones here as they come up.
 - **Decision:** The roadmap is broken into tasks in [10-task-tracker.md](10-task-tracker.md); each task holds 2–3 small or 1–2 big features from [09-feature-tracker.md](09-feature-tracker.md) and ends with a production deploy plus a verification checklist.
 - **Consequences:** Something new works in production after every task. A feature is `done` only when its task is verified in production.
 
+### ADR-018 — Toolchain versions and scaffold conventions (T01)
+- **Decision:** Node **24 LTS** everywhere (`.nvmrc`, CI, `engines` for Vercel); **pnpm 10.34.7** pinned in `packageManager` (pnpm 12 is out, but Corepack's bundled loader can't run it yet); **TypeScript 6.0** (not 7: `typescript-eslint` supports only `<6.1`); **ESLint 9** flat config (not 10: `eslint-plugin-react` supports only up to 9); Next.js 16.4, React 19, Tailwind 4.3, Vitest 5. GitHub Actions are pinned to commit SHAs.
+- **Conventions:** relative imports inside `packages/core` include the `.ts` extension so the same source can run in Deno. Core's tsconfig loads no Node or DOM types, and its ESLint config rejects Node built-ins and the `process`, `Deno` and `Buffer` globals in `src/`. Root `pnpm lint` runs `prettier --check` (Markdown excluded) and then ESLint in each package. The web `typecheck` runs `next typegen` first, so it works on a clean checkout.
+- **Consequences:** Move to TypeScript 7 and ESLint 10 once the lint plugins support them, and record that move here.
+
 ---
 
 ## Spike results (fill in during Phase 0)

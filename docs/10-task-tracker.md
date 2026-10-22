@@ -35,7 +35,7 @@ Before T01 there is no repo, so T01's deploy is the first Vercel import.
 
 | Task | Title | Features | Depends on | Size | Milestone | Status |
 |---|---|---|---|---|---|---|
-| T01 | Scaffold, CI and first deploy | FND-01, FND-02, FND-03 | — | M | | todo |
+| T01 | Scaffold, CI and first deploy | FND-01, FND-02, FND-03 | — | M | | doing |
 | T02 | Supabase and owner-only sign-in | FND-04, FND-05 | T01 | M | | todo |
 | T03 | Background plumbing: cron, heartbeat, email | FND-06, FND-07, FND-08 | T02 | M | | todo |
 | T04 | Design foundation | FND-09, FND-10 | T02 | L | | todo |
@@ -82,7 +82,7 @@ Milestones match the [roadmap](06-roadmap.md): **M1** engine running · **M2** f
 ## Personal edition
 
 ### T01 — Scaffold, CI and first deploy
-**Status:** todo · **Size:** M · **Depends on:** — · **Features:** FND-01, FND-02, FND-03 · **Plan first**
+**Status:** doing · **Size:** M · **Depends on:** — · **Features:** FND-01, FND-02, FND-03 · **Plan first**
 **Goal:** An empty but real Jobbbs app on Vercel, with the repo layout every later task builds on.
 **Build**
 - `git init`, `.gitignore`, pnpm workspace: `apps/web` (Next.js App Router, TypeScript strict, Tailwind v4), `packages/core` (TypeScript, Vitest, one sample test), `supabase/` placeholder. Layout per [02 §12](02-system-design.md#12-repository-layout).

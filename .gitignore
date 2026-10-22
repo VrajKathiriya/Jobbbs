@@ -10,6 +10,7 @@ build/
 coverage/
 .turbo/
 *.tsbuildinfo
+next-env.d.ts
 
 # secrets (only the example file is committed)
 .env

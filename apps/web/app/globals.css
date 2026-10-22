@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+/* Placeholder subset of the tokens in docs/05 §3.1. T04 replaces this with the full set and the theme cookie. */
+:root {
+  --canvas: #f4f6f4;
+  --ink: #111714;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0d1210;
+    --ink: #e6ece8;
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+}

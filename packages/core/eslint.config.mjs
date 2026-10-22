@@ -7,6 +7,25 @@ import tseslint from 'typescript-eslint';
 const pureMessage =
   'packages/core is pure: inject I/O and the clock instead (see CLAUDE.md, Architecture).';
 
+const bannedGlobals = [
+  // Node and Deno runtimes
+  'process',
+  'Deno',
+  'Buffer',
+  'require',
+  '__dirname',
+  '__filename',
+  'global',
+  // Browser-only (the DOM lib is loaded for shared web-platform types)
+  'window',
+  'document',
+  'navigator',
+  'localStorage',
+  'sessionStorage',
+  // I/O is injected
+  'fetch',
+];
+
 export default defineConfig([
   js.configs.recommended,
   tseslint.configs.recommended,
@@ -22,9 +41,23 @@ export default defineConfig([
       ],
       'no-restricted-globals': [
         'error',
-        ...['process', 'Deno', 'Buffer', 'require', '__dirname', '__filename', 'global'].map(
-          (name) => ({ name, message: pureMessage }),
-        ),
+        ...bannedGlobals.map((name) => ({ name, message: pureMessage })),
+      ],
+      'no-restricted-properties': [
+        'error',
+        { object: 'Date', property: 'now', message: pureMessage },
+        ...bannedGlobals.map((property) => ({
+          object: 'globalThis',
+          property,
+          message: pureMessage,
+        })),
+      ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "NewExpression[callee.name='Date'][arguments.length=0]",
+          message: pureMessage,
+        },
       ],
     },
   },

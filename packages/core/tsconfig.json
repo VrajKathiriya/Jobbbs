@@ -2,12 +2,14 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2023"],
+    // DOM supplies the web-platform types Node and Deno share (fetch, URL, TextEncoder, console);
+    // eslint.config.mjs bans the browser-only globals.
+    "lib": ["ES2023", "DOM"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     // Relative imports carry the .ts extension so the same source runs in Deno (Edge Functions).
     "allowImportingTsExtensions": true,
-    // No ambient Node or DOM types: core stays runtime-agnostic.
+    // No ambient Node types: core stays runtime-agnostic.
     "types": []
   },
   "include": ["src", "test"]

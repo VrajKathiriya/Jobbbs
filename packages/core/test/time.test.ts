@@ -15,4 +15,8 @@ describe('minutesSince', () => {
   it('returns 0 for a time in the future', () => {
     expect(minutesSince(new Date('2026-10-22T10:05:00Z'), now)).toBe(0);
   });
+
+  it('throws on an invalid date', () => {
+    expect(() => minutesSince(new Date('not a date'), now)).toThrow(RangeError);
+  });
 });

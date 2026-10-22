@@ -2,6 +2,7 @@
 
 /* Placeholder subset of the tokens in docs/05 §3.1. T04 replaces this with the full set and the theme cookie. */
 :root {
+  color-scheme: light dark;
   --canvas: #f4f6f4;
   --ink: #111714;
 }
@@ -16,5 +17,5 @@
 @theme inline {
   --color-canvas: var(--canvas);
   --color-ink: var(--ink);
-  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-wordmark: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 }
